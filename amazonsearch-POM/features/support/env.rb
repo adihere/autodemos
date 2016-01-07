@@ -14,7 +14,6 @@ Before do | prerequisites|
 		
     $browser = Watir::Browser.new :chrome
     $browser.goto "http://www.amazon.co.uk/"	
-    puts 'From Before of Env.rb '
 	
 
 end
@@ -35,7 +34,6 @@ end
 
 class AmazonLandingPage
   include PageObject
-   puts 'DEBUG from inside AmazonLandingPage'
   text_field(:name, :id => 'twotabsearchtextbox')
   button(:search, :value => 'Go')
 end
@@ -43,7 +41,6 @@ end
 
 class AmazonResultsPage
   include PageObject
-   puts 'DEBUG from inside AmazonResultsPage'
    h2(:searchcount, :id => 's-result-count')
   
 end
