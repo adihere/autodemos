@@ -14,19 +14,11 @@ Before do | prerequisites|
 		
     $browser = Watir::Browser.new :chrome
     $browser.goto "http://www.amazon.co.uk/"	
-	
-
 end
 
 
 After do |scenario|
-
-  #$browser.driver.save_screenshot("screenshot.png")
-  #embed("screenshot.png", "image/png")
-
-  #sleep(1)
-  
-  puts 'from After do , closing browser'
+  sleep(1)
   $browser.close
 
 end

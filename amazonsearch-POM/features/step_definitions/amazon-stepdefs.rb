@@ -17,7 +17,7 @@ end
     strFullResult =  amazon_resultspage.searchcount
 
     #extract number of results from the search
-    obj_utiladi = new UtilAdi     
+    obj_utiladi =  UtilAdi.new    
     countActualResult = obj_utiladi.countResults(strFullResult)
   
      if  countActualResult >= expectedcount.to_i
