@@ -46,6 +46,18 @@ class AmazonResultsPage
 end
 
 
+class UtilAdi
+ #method to extract number of results from the search  string
+ def countResults(strInput)
+    indexStart = strInput.index('of ')
+    indexEnd = strInput.index(' results')
+       
+    strActualResult = strInput [indexStart+3,indexEnd-8]  
+    countActualResult = strActualResult.gsub(',','').to_i
+    #return countActualResult
+     countActualResult
+  end 
+end
 
 
  

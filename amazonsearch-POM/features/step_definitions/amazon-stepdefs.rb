@@ -16,8 +16,9 @@ end
     puts amazon_resultspage.searchcount
     strFullResult =  amazon_resultspage.searchcount
 
-    #extract number of results from the search     
-    countActualResult = countResults(strFullResult)
+    #extract number of results from the search
+    obj_utiladi = new UtilAdi     
+    countActualResult = obj_utiladi.countResults(strFullResult)
   
      if  countActualResult >= expectedcount.to_i
       # Save screenshot to file
@@ -26,18 +27,6 @@ end
      
    end
   
-
- #method to extract number of results from the search  string
- def countResults(strInput)
-    #extract number of results from the search
-    indexStart = strInput.index('of ')
-    indexEnd = strInput.index(' results')
-       
-    strActualResult = strInput [indexStart+3,indexEnd-8]  
-    countActualResult = strActualResult.gsub(',','').to_i
-    return countActualResult
-  end 
-
 
   
 end
