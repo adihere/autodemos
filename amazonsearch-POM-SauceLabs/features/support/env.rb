@@ -3,6 +3,18 @@ require 'pry'
 require 'page-object'
 
 
+#created sauce capability object
+caps = Selenium::WebDriver::Remote::Capabilities.new
+caps['platform'] = "Windows 8.1"
+caps['browserName'] = "internet explorer"
+caps['version'] = "11"
+caps['name'] = "Test trail 3 with Sauce by Adi"
+ 
+def sauce_url
+  "http://adityahere:1f6820dc-d457-44ea-80c0-2271351298ca@ondemand.saucelabs.com:80/wd/hub"
+end
+
+
 at_exit do
       
   #global exit hook - not in use for now
@@ -11,12 +23,11 @@ end
 
 
 Before do | prerequisites|
-		
-    #$browser = Watir::Browser.new :chrome
-    #calling saucelabs capability
-    $browser = Selenium::WebDriver.for(:remote, url: sauce_url, desired_capabilities: caps)
-    $browser.goto "http://www.amazon.co.uk/"	
 	
+    #calling saucelabs capability
+    $browser = Watir::Browser.new(:remote, url: sauce_url, desired_capabilities: caps)
+    #$browser = Watir::Browser.new :chrome
+    $browser.goto "http://www.amazon.co.uk/"	
 end
 
 
